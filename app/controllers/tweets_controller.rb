@@ -24,6 +24,13 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
   end
 
+  def update
+    tweet = Tweet.find(params[:id])
+    if tweet.user_id == current_user.id
+      tweet.update(tweet_params)
+    end
+  end
+
   private
   def move_to_index
     redirect_to action: :index unless user_signed_in?
