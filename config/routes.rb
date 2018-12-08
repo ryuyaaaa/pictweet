@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   patch 'tweets/:id' => 'tweets#update'
   get 'users/:id' => 'users#show' # Mypageへのルーティング
   get 'tweets/:id/edit' => 'tweets#edit'
+  get 'tweets/:id' => 'tweets#show' # ツイート詳細画面
 end
